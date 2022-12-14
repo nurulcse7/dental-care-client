@@ -61,7 +61,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
   for server live when coding (https://nodemon.io/) and (https://www.npmjs.com/package/nodemon)
 - MongoDB (Atlas, Cluster) for database (https://cloud.mongodb.com/)
 - React Query/ TanStack Query (npm i @tanstack/react-query) 
-- JWT (JSON Web Token) for authorization 
+- JWT (JSON Web Token) for authorization (npm i jsonwebtoken) (https://www.npmjs.com/package/jsonwebtoken)
 - Stripe for payment get way
 - Deploy in Vercel (server)
 
