@@ -3,14 +3,14 @@
 #### Live link
 
 `Live website` [Click here](https://dental-care-com.web.app/)
-<!-- `client-side` [Click here]() -->
+<!-- `client-side` [Click here](https://dental-care-com.web.app/) -->
 <!-- `server-side` [Click here]() -->
 
-#### Code link
+#### Code link 
 
-<!-- `GitHub` [Click here]() -->
+<!-- `GitHub` [Click here](https://github.com/nurulcse7/dental-care-client) -->
 `client-side` [Click here](https://github.com/nurulcse7/dental-care-client)
-`server-side` [Click here]()
+`server-side` [Click here](https://github.com/nurulcse7/dental-care-server)
 
 ### Description
 - In this project implement for dental care services who need to specialist Dentist. Here people can take a dental service their flexible time slot with service categories. Also he/she can one more services in a day but not same time. 
@@ -32,7 +32,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - SEO Friendly 
 - Mobile and PC, Tablet Responsive 
 - Doctors Management 
-- Customer Management 
+- Customers Management 
 - Add to Cart / Book Appointment 
 - Payment Gateway 
 - Email services 
@@ -57,7 +57,10 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 #### Back-end Technology
 
 - Node.JS
-- MongoDB (Atlas, Cluster) for database
+- Nodemon (npm install -g nodemon)
+  for server live when coding (https://nodemon.io/) and (https://www.npmjs.com/package/nodemon)
+- MongoDB (Atlas, Cluster) for database (https://cloud.mongodb.com/)
+- React Query/ TanStack Query (npm i @tanstack/react-query) 
 - JWT (JSON Web Token) for authorization 
 - Stripe for payment get way
 - Deploy in Vercel (server)
