@@ -2,7 +2,7 @@
 
 #### Live link
 
-`Live website` [Click here]()
+`Live website` [Click here](https://dental-care-com.web.app/)
 <!-- `client-side` [Click here]() -->
 <!-- `server-side` [Click here]() -->
 
@@ -14,6 +14,10 @@
 
 ### Description
 - In this project implement for dental care services who need to specialist Dentist. Here people can take a dental service their flexible time slot with service categories. Also he/she can one more services in a day but not same time. 
+- Customer/user can't take a service without login and login form also validation implemented, such as  full 
+name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&*).
+- Implement user email verification enable
+
 - This project frontend start with Create-react-app (ReactJS)
 - Design by Tailwindcss with daisyUI Component 
 - Backend start with NodeJS and ExpressJS
@@ -21,7 +25,19 @@
 - Implement CRUD operation
 - Every section completed after code push on GitHub
 
----
+--- 
+
+### Features 
+- Custom Design 
+- SEO Friendly 
+- Mobile and PC, Tablet Responsive 
+- Doctors Management 
+- Customer Management 
+- Add to Cart / Book Appointment 
+- Payment Gateway 
+- Email services 
+<!-- - Shipping Management  -->
+<!-- - Invoice Printing  -->
 
 #### Front-end Technology
 
@@ -31,12 +47,11 @@
 - JavaScript
 - ReactJS
 - React Router - (npm install react-router-dom)
-- React-Context
+- React-Context (AuthProvider)
 - React Hook Form (npm install react-hook-form)
 - React-Toastify (npm i react-toastify)
 - React Icons (npm install react-icons --save)
 - React Day Picker (npm install react-day-picker date-fns)
-
 <!-- - Axios (Fetch data from backend) (npm i axios) -->
 
 #### Back-end Technology
