@@ -52,6 +52,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - React-Toastify (npm i react-toastify)
 - React Icons (npm install react-icons --save)
 - React Day Picker (npm install react-day-picker date-fns)
+- TypewriterJS (npm i typewriter-effect)
 <!-- - Axios (Fetch data from backend) (npm i axios) -->
 
 #### Back-end Technology
