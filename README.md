@@ -1,5 +1,53 @@
 # Dental Care
 
+#### Live link
+
+`Live website` [Click here]()
+<!-- `client-side` [Click here]() -->
+<!-- `server-side` [Click here]() -->
+
+#### Code link
+
+<!-- `GitHub` [Click here]() -->
+`client-side` [Click here](https://github.com/nurulcse7/dental-care-client)
+`server-side` [Click here]()
+
+### Description
+- In this project implement for dental care services who need to specialist Dentist. Here people can take a dental service their flexible time slot with service categories. Also he/she can one more services in a day but not same time. 
+- This project frontend start with Create-react-app (ReactJS)
+- Design by Tailwindcss with daisyUI Component 
+- Backend start with NodeJS and ExpressJS
+- Connect server with MongoDB Database
+- Implement CRUD operation
+- Every section completed after code push on GitHub
+
+---
+
+#### Front-end Technology
+
+- Firebase for authentication and deploy (hosting)
+- Tailwind CSS
+- daisyUI
+- JavaScript
+- ReactJS
+- React Router - (npm install react-router-dom)
+- React-Context
+- React Hook Form (npm install react-hook-form)
+- React-Toastify (npm i react-toastify)
+- React Icons (npm install react-icons --save)
+- React Day Picker (npm install react-day-picker date-fns)
+
+<!-- - Axios (Fetch data from backend) (npm i axios) -->
+
+#### Back-end Technology
+
+- Node.JS
+- MongoDB (Atlas, Cluster) for database
+- JWT (JSON Web Token) for authorization 
+- Stripe for payment get way
+- Deploy in Vercel (server)
+
+---
 
 <!-- 
 # Getting Started with Create React App
