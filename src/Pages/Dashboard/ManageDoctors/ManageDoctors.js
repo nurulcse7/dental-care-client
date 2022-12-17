@@ -6,7 +6,6 @@ import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 
 const ManageDoctors = () => {
   const [deletingDoctor, setDeletingDoctor] = useState(null);
-
   const closeModal = () => { setDeletingDoctor(null); };
 
   const { data: doctors, isLoading, refetch, } = useQuery({
