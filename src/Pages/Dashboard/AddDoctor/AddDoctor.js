@@ -11,7 +11,8 @@ const AddDoctor = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  //   const imageHostKey = process.env.REACT_APP_imgBB_key;
+    const imageHostKey = process.env.REACT_APP_imgBB_key; //76-4
+    // console.log(imageHostKey)
   const navigate = useNavigate();
 
   const { data: specialties, isLoading } = useQuery({
@@ -25,26 +26,27 @@ const AddDoctor = () => {
 
   const handleAddDoctor = (data) => {
     console.log(data);
-    // const image = data.image[0];
-    // const formData = new FormData();
-    // formData.append('image', image);
-    // const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
-    // fetch(url, {
-    //   method: 'POST',
-    //   body: formData,
-    // })
-    //   .then((res) => res.json())
-    //   .then((imgData) => {
-    //     if (imgData.success) {
-    //       console.log(imgData.data.url);
-    //       const doctor = {
-    //         name: data.name,
-    //         email: data.email,
-    //         specialty: data.specialty,
-    //         image: imgData.data.url,
-    //       };
+    // 76-4
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append('image', image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
+    fetch(url, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+        if (imgData.success) {
+          console.log(imgData.data.url);
+        //   const doctor = {
+        //     name: data.name,
+        //     email: data.email,
+        //     specialty: data.specialty,
+        //     image: imgData.data.url,
+        //   };
 
-    //       // save doctor information to the database
+    //       // save doctor information to the database 76-5
     //       fetch('http://localhost:5000/doctors', {
     //         method: 'POST',
     //         headers: {
@@ -59,8 +61,8 @@ const AddDoctor = () => {
     //           toast.success(`${data.name} is added successfully`);
     //           navigate('/dashboard/managedoctors');
     //         });
-    //     }
-    //   });
+        }
+      });
   };
 
     if (isLoading) {
