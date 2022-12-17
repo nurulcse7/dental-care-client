@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* user can't select text */
+* {
+  user-select: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,9 +14,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* user can't select text */
+  /* user-select: none;  */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* using pseudo element for when user select any page content (if not set= user-select: none;)*/
+::selection {
+  color: rgb(243, 246, 249);
+  background: rgb(113, 71, 251);
+}
+
+/* user can't select text. If used .prevent-select class or user-select: none;*/
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+/* Protect image download  */
+/* My answer on stackOverflow https://stackoverflow.com/a/74820810*/
+img {
+  pointer-events: none;
 }

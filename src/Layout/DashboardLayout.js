@@ -21,7 +21,7 @@ const DashboardLayout = () => {
         </div>
         <div className='drawer-side'>
           <label htmlFor='dashboard-drawer' className='drawer-overlay'></label>
-          <ul className='menu p-4 w-80 bg-base-100 text-base-content'>
+          <ul className='menu p-4 w-80 text-base-content'>
             <li>
               <Link to='/dashboard'>My Appointments</Link>
             </li>
@@ -29,6 +29,13 @@ const DashboardLayout = () => {
               <>
                 <li>
                   <Link to='/dashboard/allusers'>All users</Link>
+                </li>
+                <li>
+                  <Link to='/dashboard/adddoctor'>Add A Doctor</Link>
+                </li>
+                <li>
+                  <Link to='/dashboard/managedoctors'>Manage Doctors</Link>
+                  <Link></Link>
                 </li>
               </>
             )}
@@ -40,4 +47,4 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
-// 75-1, 9. 
+// 75-1, 9. 76-1, 

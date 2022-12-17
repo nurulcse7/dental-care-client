@@ -13,7 +13,7 @@ const MyAppointment = () => {
       const res = await fetch(url, {
         headers: {
           authorization: `bearer ${localStorage.getItem('accessToken')}`,
-        }, // 75-5 
+        },
       });
       const data = await res.json();
       return data;
@@ -35,15 +35,16 @@ const MyAppointment = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking, i) => (
-              <tr key={booking._id}>
-                <th>{i + 1}</th>
-                <td>{booking.patient}</td>
-                <td>{booking.treatment}</td>
-                <td>{booking.appointmentDate}</td>
-                <td>{booking.slot}</td>
-              </tr>
-            ))}
+            {bookings &&
+              bookings?.map((booking, i) => (
+                <tr key={booking._id}>
+                  <th>{i + 1}</th>
+                  <td>{booking.patient}</td>
+                  <td>{booking.treatment}</td>
+                  <td>{booking.appointmentDate}</td>
+                  <td>{booking.slot}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
@@ -52,4 +53,4 @@ const MyAppointment = () => {
 };
 
 export default MyAppointment;
-// 75-1 
+// 75-1
