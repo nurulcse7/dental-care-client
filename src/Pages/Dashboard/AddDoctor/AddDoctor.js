@@ -144,7 +144,7 @@ const AddDoctor = () => {
   );
 };
 export default AddDoctor;
-// 76-1, 2, 3, 4, 
+// 76-1, 2, 3, 4, 5.
 /**
  * Three places to store images
  * 1. Third party image hosting server
