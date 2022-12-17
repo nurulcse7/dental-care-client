@@ -7,18 +7,21 @@ import Loading from '../../Shared/Loading/Loading';
 
 const AddDoctor = () => {
   const {
-    register,handleSubmit, formState: { errors }, } = useForm();
-//   const imageHostKey = process.env.REACT_APP_imgBB_key;
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  //   const imageHostKey = process.env.REACT_APP_imgBB_key;
   const navigate = useNavigate();
 
-  //   const { data: specialties, isLoading } = useQuery({
-  //     queryKey: ['specialty'],
-  //     queryFn: async () => {
-  //       const res = await fetch('http://localhost:5000/appointmentSpecialty');
-  //       const data = await res.json();
-  //       return data;
-  //     },
-  //   });
+  const { data: specialties, isLoading } = useQuery({
+    queryKey: ['specialty'],
+    queryFn: async () => {
+      const res = await fetch('http://localhost:5000/appointmentSpecialty');
+      const data = await res.json();
+      return data;
+    },
+  });
 
   const handleAddDoctor = (data) => {
     console.log(data);
@@ -60,9 +63,9 @@ const AddDoctor = () => {
     //   });
   };
 
-  //   if (isLoading) {
-  //     return <Loading></Loading>;
-  //   }
+    if (isLoading) {
+      return <Loading></Loading>;
+    }
 
   return (
     <div className='w-96 p-7'>
@@ -71,7 +74,7 @@ const AddDoctor = () => {
         <div className='form-control w-full max-w-xs'>
           <label className='label'>
             {' '}
-            <span className='label-text'>Name</span>
+            <span className='label-text text-lg mt-2'>Name</span>
           </label>
           <input
             type='text'
@@ -85,7 +88,7 @@ const AddDoctor = () => {
         <div className='form-control w-full max-w-xs'>
           <label className='label'>
             {' '}
-            <span className='label-text'>Email</span>
+            <span className='label-text text-lg mt-2'>Email</span>
           </label>
           <input
             type='email'
@@ -101,33 +104,34 @@ const AddDoctor = () => {
         <div className='form-control w-full max-w-xs'>
           <label className='label'>
             {' '}
-            <span className='label-text'>Specialty</span>
+            <span className='label-text text-lg mt-2'>Specialty</span>
           </label>
           <select
             {...register('specialty')}
             className='select input-bordered w-full max-w-xs'
           >
-          <option disabled selected>Pick a Specialty</option>
-          <option>Svelte</option>
-          <option>Vue</option>
-          <option>React</option>
+            {specialties.map((specialty) => (
+              <option key={specialty._id} value={specialty.name}>
+                {specialty.name}
+              </option>
+            ))}
           </select>
         </div>
         <div className='form-control w-full max-w-xs'>
           <label className='label'>
             {' '}
-            <span className='label-text'>Photo</span>
+            <span className='label-text text-lg mt-2 '>Photo</span>
           </label>
           <input
-            type='file'
+          type='file'
             {...register('image', {
               required: 'Photo is Required',
             })}
-            className='input input-bordered w-full max-w-xs'
+            className='input input-bordered w-full max-w-xs p-2' 
           />
           {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
         </div>
-        
+
         <input
           className='btn btn-accent w-full mt-4'
           value='Add Doctor'
@@ -138,21 +142,10 @@ const AddDoctor = () => {
   );
 };
 export default AddDoctor;
-// 76-1
+// 76-1, 2, 3, 4, 
 /**
  * Three places to store images
  * 1. Third party image hosting server
  * 2. File system of your server
  * 3. mongodb (database)
  */
-
-// <select
-//   {...register('specialty')}
-//   className='select input-bordered w-full max-w-xs'
-// >
-//   {specialties.map((specialty) => (
-//     <option key={specialty._id} value={specialty.name}>
-//       {specialty.name}
-//     </option>
-//   ))}
-// </select>;
