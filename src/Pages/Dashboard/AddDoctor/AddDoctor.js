@@ -39,28 +39,28 @@ const AddDoctor = () => {
       .then((imgData) => {
         if (imgData.success) {
           console.log(imgData.data.url);
-        //   const doctor = {
-        //     name: data.name,
-        //     email: data.email,
-        //     specialty: data.specialty,
-        //     image: imgData.data.url,
-        //   };
+          const doctor = {
+            name: data.name,
+            email: data.email,
+            specialty: data.specialty,
+            image: imgData.data.url,
+          };
 
-    //       // save doctor information to the database 76-5
-    //       fetch('http://localhost:5000/doctors', {
-    //         method: 'POST',
-    //         headers: {
-    //           'content-type': 'application/json',
-    //           authorization: `bearer ${localStorage.getItem('accessToken')}`,
-    //         },
-    //         body: JSON.stringify(doctor),
-    //       })
-    //         .then((res) => res.json())
-    //         .then((result) => {
-    //           console.log(result);
-    //           toast.success(`${data.name} is added successfully`);
-    //           navigate('/dashboard/managedoctors');
-    //         });
+          // save doctor information to the database 76-5
+          fetch('http://localhost:5000/doctors', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+              authorization: `bearer ${localStorage.getItem('accessToken')}`,
+            },
+            body: JSON.stringify(doctor),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              console.log(result);
+              toast.success(`${data.name} is added successfully`);
+            //   navigate('/dashboard/managedoctors');
+            });
         }
       });
   };
