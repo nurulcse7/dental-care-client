@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CheckoutForm = ({ booking }) => {
   const [cardError, setCardError] = useState('');
@@ -13,7 +14,7 @@ const CheckoutForm = ({ booking }) => {
   const { price, email, patient, _id } = booking;
 
   useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
+    // Create PaymentIntent as soon as the page loads 77-7 
     fetch('http://localhost:5000/create-payment-intent', {
       method: 'POST',
       headers: {
@@ -26,23 +27,20 @@ const CheckoutForm = ({ booking }) => {
       .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
 
+// 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     if (!stripe || !elements) {
       return;
     }
-
     const card = elements.getElement(CardElement);
     if (card === null) {
       return;
     }
-
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card,
     });
-
     if (error) {
       console.log(error);
       setCardError(error.message);
@@ -51,6 +49,8 @@ const CheckoutForm = ({ booking }) => {
     }
     setSuccess('');
     setProcessing(true);
+
+    // 77-7
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -68,7 +68,7 @@ const CheckoutForm = ({ booking }) => {
     }
     if (paymentIntent.status === 'succeeded') {
       console.log('card info', card);
-      // store payment info in the database
+      // store payment info in the database 77-9
       const payment = {
         price,
         transactionId: paymentIntent.id,
@@ -87,7 +87,7 @@ const CheckoutForm = ({ booking }) => {
         .then((data) => {
           console.log(data);
           if (data.insertedId) {
-            setSuccess('Congrats! your payment completed');
+            setSuccess('Congrats! your payment successfully');
             setTransactionId(paymentIntent.id);
           }
         });
@@ -115,7 +115,7 @@ const CheckoutForm = ({ booking }) => {
           }}
         />
         <button
-          className='btn btn-sm mt-4 btn-primary'
+          className='btn  mt-4 mb-4 btn-primary'
           type='submit'
           disabled={!stripe || !clientSecret || processing}
         >
@@ -130,10 +130,13 @@ const CheckoutForm = ({ booking }) => {
             Your transactionId:{' '}
             <span className='font-bold'>{transactionId}</span>
           </p>
+          <Link to='/' className='btn btn-secondary mt-12'>Back to Home</Link>
         </div>
+        
       )}
     </>
   );
 };
 
 export default CheckoutForm;
+// 77-4, 5, 7, 8, 9.

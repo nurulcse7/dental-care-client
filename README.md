@@ -53,6 +53,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - React Icons (npm install react-icons --save)
 - React Day Picker (npm install react-day-picker date-fns)
 - TypewriterJS (npm i typewriter-effect)
+- StripeJS (npm install --save @stripe/react-stripe-js @stripe/stripe-js)
 <!-- - Axios (Fetch data from backend) (npm i axios) -->
 
 #### Back-end Technology
@@ -63,7 +64,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - MongoDB (Atlas, Cluster) for database (https://cloud.mongodb.com/)
 - React Query/ TanStack Query (npm i @tanstack/react-query) 
 - JWT (JSON Web Token) for authorization (npm i jsonwebtoken) (https://www.npmjs.com/package/jsonwebtoken)
-- Stripe for payment get way
+- Stripe for payment get way (npm install --save stripe) (https://stripe.com/docs/payments/quickstart) (https://stripe.com/docs/testing)
 - Deploy in Vercel (server)
 
 ---
