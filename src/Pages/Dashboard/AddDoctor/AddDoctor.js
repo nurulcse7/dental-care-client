@@ -59,7 +59,7 @@ const AddDoctor = () => {
             .then((result) => {
               console.log(result);
               toast.success(`${data.name} is added successfully`);
-            //   navigate('/dashboard/managedoctors');
+              navigate('/dashboard/managedoctors');
             });
         }
       });
