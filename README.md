@@ -4,7 +4,7 @@
 
 `Live website` [Click here](https://dental-care-com.web.app/)
 <!-- `client-side` [Click here](https://dental-care-com.web.app/) -->
-<!-- `server-side` [Click here]() -->
+<!-- `server-side` [Click here](https://dental-care-server-rho.vercel.app) -->
 
 #### Code link 
 
@@ -60,14 +60,26 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 
 - Node.JS
 - Nodemon (npm install -g nodemon)
-  for server live when coding (https://nodemon.io/) and (https://www.npmjs.com/package/nodemon)
-- MongoDB (Atlas, Cluster) for database (https://cloud.mongodb.com/)
-- React Query/ TanStack Query (npm i @tanstack/react-query) 
-- JWT (JSON Web Token) for authorization (npm i jsonwebtoken) (https://www.npmjs.com/package/jsonwebtoken)
-- Stripe for payment get way (npm install --save stripe) (https://stripe.com/docs/payments/quickstart) (https://stripe.com/docs/testing)
-- Deploy in Vercel (server)
+  for server live when coding [Docs1](https://nodemon.io/) and [Docs2](https://www.npmjs.com/package/nodemon)
+
+- MongoDB (Atlas, Cluster) for database [Docs](https://cloud.mongodb.com/)
+
+- React Query/ TanStack Query (npm i @tanstack/react-query)
+
+- JWT (JSON Web Token) for authorization (npm i jsonwebtoken) [Docs](https://www.npmjs.com/package/jsonwebtoken)
+
+- Stripe for payment get way (npm install --save stripe) [Docs1](https://stripe.com/docs/payments/quickstart) [Docs2](https://stripe.com/docs/testing)
+
+- Nodemailer (npm install nodemailer) [Docs](https://nodemailer.com/about/)
+- Mail gun () [Docs](https://app.mailgun.com/mg/dashboard) [npm](https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport)
+
+- Deploy in Vercel (server) [Docs](https://vercel.com/dashboard)
+
+
 
 ---
+
+
 
 <!-- 
 # Getting Started with Create React App

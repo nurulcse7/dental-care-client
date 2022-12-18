@@ -16,14 +16,14 @@ const Payment = () => {
     return <Loading></Loading>;
   }
   return (
-    <div>
+    <div className='shadow-2xl rounded-2xl m-4 p-4'>
       <h3 className='text-3xl'>Payment for {treatment}</h3>
       <p className='text-xl'>
         Please pay <strong>${price}</strong> for your appointment on{' '}
         {appointmentDate} at {slot}
       </p>
-      <div className='w-96 my-12'>
-        <Elements stripe={stripePromise}>
+      <div className='w-96 my-12 '>
+        <Elements  stripe={stripePromise}>
           <CheckoutForm booking={booking} />
         </Elements>
       </div>

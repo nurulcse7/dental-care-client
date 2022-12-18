@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
   // treatment is just another name of appointmentOptions with name, slots, _id
@@ -24,7 +25,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
       slot,
       email,
       phone,
-      price
+      price,
     };
 
     // TODO: send data to the server
@@ -102,11 +103,17 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
               className='input w-full input-bordered'
             />
             <br />
-            <input
-              className='btn btn-accent w-full'
-              type='submit'
-              value='Submit'
-            />
+            {user?.uid ? (
+              <>
+                <input
+                  className='btn btn-accent w-full'
+                  type='submit'
+                  value='Submit'
+                />
+              </>
+            ) : (
+              <Link to='/login' className='btn btn-warning w-full capitalize text-xl hover:btn-secondary'> Please Login First</Link>
+            )}
           </form>
         </div>
       </div>

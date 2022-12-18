@@ -44,7 +44,7 @@ const ManageDoctors = () => {
   }
 
   return (
-    <div>
+    <div className='shadow-2xl rounded-2xl m-2 p-2'>
       <h2 className='text-3xl'>Manage Doctors: {doctors?.length}</h2>
       <div className='overflow-x-auto'>
         <table className='table w-full'>
