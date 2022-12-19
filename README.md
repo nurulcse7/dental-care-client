@@ -50,12 +50,13 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - React-Context (AuthProvider)
 - React Hook Form (npm install react-hook-form)
 - React-Toastify (npm i react-toastify)
-- React Icons [npm](npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
+- React Icons (npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
 
-- React Day Picker [npm](npm install react-day-picker date-fns)
+- React Day Picker (npm install react-day-picker date-fns)
 - TypewriterJS (npm i typewriter-effect)
 - StripeJS (npm install --save @stripe/react-stripe-js @stripe/stripe-js)
 - EmailJS (npm install @emailjs/browser --save) 
+- React-phone-number-input (npm i react-phone-number-input) [Docs](https://www.npmjs.com/package/react-phone-number-input)
 
 #### Back-end Technology
 
@@ -72,7 +73,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - Stripe for payment get way (npm install --save stripe) [Docs1](https://stripe.com/docs/payments/quickstart) [Docs2](https://stripe.com/docs/testing)
 
 - Nodemailer (npm install nodemailer) [Docs](https://nodemailer.com/about/)
-- Mail gun () [Docs](https://app.mailgun.com/mg/dashboard) [npm](https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport)
+- Mail gun () [Docs](https://app.mailgun.com/mg/dashboard) (https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport)
 
 - Deploy in Vercel (server) [Docs](https://vercel.com/dashboard)
 

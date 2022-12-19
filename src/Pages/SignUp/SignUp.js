@@ -7,16 +7,18 @@ import useTitle from '../../hooks/useTitle';
 import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
-  useTitle('SignUp')
+  useTitle('SignUp');
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, verifyEmail } = useContext(AuthContext);
   const [signUpError, setSignUPError] = useState('');
   const [createdUserEmail, setCreatedUserEmail] = useState('');
+  const [agree, setAgree] = useState(false);
+
   const [token] = useToken(createdUserEmail);
   const navigate = useNavigate();
 
@@ -32,6 +34,7 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         toast.success('User Created Successfully.');
+        handleEmailVerification();
         const userInfo = {
           displayName: data.name,
         };
@@ -46,7 +49,7 @@ const SignUp = () => {
         setSignUPError(error.message);
       });
   };
-// 75 
+  // 75
   const saveUser = (name, email) => {
     const user = { name, email };
     fetch('http://localhost:5000/users', {
@@ -56,53 +59,123 @@ const SignUp = () => {
       },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
+      .then(( res) => res.json())
       .then((data) => {
         setCreatedUserEmail(email);
       });
   };
 
+  // Without verify email user can't login and access private route 62-4
+  const handleEmailVerification = () => {
+    verifyEmail()
+      .then(() => {
+        toast.success(
+          'Please check your inbox/spam folder and verify your email address'
+        );
+      })
+      .catch((error) => console.error(error));
+  };
+
+  // Agree to terms and conditions (checkbox and para) 62-3
+  const handleAgreed = (event) => {
+    setAgree(event.target.checked);
+  };
+
   return (
-    <div className='h-[800px] flex justify-center items-center'>
+    <div className='h-[800px] flex justify-center items-center shadow-2xl'>
       <div className='w-96 p-7'>
-        <h2 className='text-xl text-center'>Sign Up</h2>
+        <h2 className='text-2xl text-center font-bold'>Sign Up</h2>
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className='form-control w-full max-w-xs'>
             <label className='label'>
               {' '}
-              <span className='label-text'>Name</span>
+              <span className='label-text text-lg'>Name</span>
             </label>
             <input
               type='text'
               {...register('name', {
                 required: 'Name is Required',
               })}
+              placeholder='Your Full Name'
               className='input input-bordered w-full max-w-xs'
             />
             {errors.name && (
               <p className='text-red-500'>{errors.name.message}</p>
             )}
           </div>
+
           <div className='form-control w-full max-w-xs'>
             <label className='label'>
-              {' '}
-              <span className='label-text'>Email</span>
+              <span className='label-text text-lg'>Email</span>
             </label>
             <input
               type='email'
               {...register('email', {
-                required: true,
+                required: 'Email is required',
               })}
+              placeholder='email address'
               className='input input-bordered w-full max-w-xs'
             />
             {errors.email && (
               <p className='text-red-500'>{errors.email.message}</p>
             )}
           </div>
+
+          <div className='form-control w-full max-w-xs'>
+            <label className='label'>
+              <span className='label-text text-lg'>Address</span>
+            </label>
+            <input
+              type='text'
+              {...register('address', {
+                required: false,
+              })}
+              placeholder='address'
+              className='input input-bordered w-full max-w-xs'
+            />
+            {errors.address && (
+              <p className='text-red-500'>{errors.address.message}</p>
+            )}
+          </div>
+
+          <div className='form-control w-full max-w-xs'>
+            <label className='label'>
+              <span className='label-text text-lg'>Phone Number</span>
+            </label>
+            <input
+              type='text'
+              {...register('phone', {
+                required: 'Phone required',
+              })}
+              placeholder='mobile'
+              className='input input-bordered w-full max-w-xs'
+            />
+            {errors.phone && (
+              <p className='text-red-500'>{errors.phone.message}</p>
+            )}
+          </div>
+
+          <div className='form-control w-full max-w-xs'>
+            <label className='label'>
+              <span className='label-text text-lg'>Photo URL</span>
+            </label>
+            <input
+              type='text'
+              {...register('photo', {
+                required: false,
+              })}
+              placeholder='photo url'
+              className='input input-bordered w-full max-w-xs'
+            />
+            {errors.photo && (
+              <p className='text-red-500'>{errors.photo.message}</p>
+            )}
+          </div>
+
           <div className='form-control w-full max-w-xs'>
             <label className='label'>
               {' '}
-              <span className='label-text'>Password</span>
+              <span className='label-text text-lg'>Password</span>
             </label>
             <input
               type='password'
@@ -118,30 +191,48 @@ const SignUp = () => {
                     'Password must have uppercase, number and special characters',
                 },
               })}
+              placeholder='min 6 digit, 1 sp, 1 Uppercase'
               className='input input-bordered w-full max-w-xs'
             />
             {errors.password && (
               <p className='text-red-500'>{errors.password.message}</p>
             )}
           </div>
+
+          <label className='cursor-pointer flex mt-3'>
+            <input
+              onClick={handleAgreed}
+              type='checkbox'
+              className='checkbox checkbox-info bg-success'
+            />
+            <span className='label-text ml-1'>
+              Agree
+              <Link to='/terms' className='underline hover:text-green-500'>
+                {' '}
+                to terms and conditions
+              </Link>
+            </span>
+          </label>
+
           <input
             className='btn btn-accent w-full mt-4'
             value='Sign Up'
             type='submit'
+            disabled={!agree}
           />
           {signUpError && <p className='text-red-600'>{signUpError}</p>}
         </form>
-        <p>
+        <p className='mt-1'>
           Already have an account{' '}
           <Link className='text-secondary' to='/login'>
             Please Login
           </Link>
         </p>
-        <div className='divider'>OR</div>
-        <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
       </div>
     </div>
   );
 };
 
 export default SignUp;
+// <div className='divider'>OR</div>
+//         <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>

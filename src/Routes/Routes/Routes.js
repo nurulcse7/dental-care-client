@@ -12,6 +12,7 @@ import MyAppointment from "../../Pages/Dashboard/MyAppointment/MyAppointment";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import Profile from "../../Pages/Profile/Profile";
 import ErrorPage from "../../Pages/Shared/ErrorPage";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About></About>
+                element: <PrivateRoute><About></About></PrivateRoute>
             },
             {
                 path: '/contact',
@@ -49,8 +50,14 @@ const router = createBrowserRouter([
             },
             {
                 path: '/terms',
-                element: <TermsConditions></TermsConditions>
+                element: <PrivateRoute><TermsConditions></TermsConditions></PrivateRoute>
             },
+            {
+                path: '/profile',
+                element: (
+                  <PrivateRoute><Profile></Profile></PrivateRoute>
+                ),
+              },
         ]
     },
     {

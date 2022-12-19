@@ -40,24 +40,31 @@ const Navbar = () => {
           </li>
         </>
       ) : (
-        <li>
-          <Link to='/login'>Login</Link>
-        </li>
+        <>
+          <li>
+            <Link to='/login'>Login</Link>
+          </li>
+          <li>
+            <Link to='/signup'>SignUp</Link>
+          </li>
+          
+        </>
+        
       )}
       <li>
-      <Link to='/profile'>
-      {user?.photoURL ? (
-        <img
-          src={user?.photoURL}
-          className='rounded-full w-12 mt-2'
-          title={user?.displayName}
-          alt='Pic'
-        />
-      ) : (
-        <FaUser className='mt-5'></FaUser>
-      )}
-    </Link>
-      </li>
+            <Link to='/profile'>
+              {user?.photoURL ? (
+                <img
+                  src={user?.photoURL}
+                  className='rounded-full w-12'
+                  title={user?.displayName}
+                  alt='Pic'
+                />
+              ) : (
+                <FaUser className=''></FaUser>
+              )}
+            </Link>
+          </li>
     </React.Fragment>
   );
 

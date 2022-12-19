@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
 
 const Contact = () => {
-  useTitle('Contact');
+  useTitle('ContactUs');
 
   const form = useRef();
   const sendEmail = (e) => {
