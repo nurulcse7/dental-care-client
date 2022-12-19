@@ -76,7 +76,7 @@ const ManageDoctors = () => {
                   <label
                     onClick={() => setDeletingDoctor(doctor)}
                     htmlFor='confirmation-modal'
-                    className='btn btn-sm btn-error'
+                    className='btn btn-sm bg-gradient-to-r from-accent to-secondary  text-white capitalize'
                   >
                     Delete
                   </label>

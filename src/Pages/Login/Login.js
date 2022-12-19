@@ -1,12 +1,12 @@
 import {
   getAuth,
   GoogleAuthProvider,
-  sendPasswordResetEmail,
+  // sendPasswordResetEmail,
 } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-hot-toast';
+// import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import app from '../../firebase/firebase.config';
@@ -25,7 +25,7 @@ const Login = () => {
   } = useForm();
   const { user, signIn, signInWithGoogle } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
-  const [userEmail, setUserEmail] = useState('');
+  // const [userEmail, setUserEmail] = useState('');
   const [loginError, setLoginError] = useState('');
   const [loginUserEmail, setLoginUserEmail] = useState('');
   const [token] = useToken(loginUserEmail); //75-7
@@ -137,7 +137,7 @@ const Login = () => {
             )}
           </div>
           <input
-            className='btn btn-accent w-full text-xl capitalize mt-2'
+            className='btn bg-gradient-to-r from-accent to-secondary text-xl text-white capitalize w-full mt-2'
             value='Login'
             type='submit'
           />

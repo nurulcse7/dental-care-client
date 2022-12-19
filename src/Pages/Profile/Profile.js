@@ -2,10 +2,10 @@ import React, { useContext, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useTitle from '../../hooks/useTitle';
-
+import Typewriter from 'typewriter-effect';
 
 const Profile = () => {
-  useTitle('Profile')
+  useTitle('Profile');
   const { user, updateUserProfile } = useContext(AuthContext);
   const [name, setName] = useState(user.displayName);
   const photoURLRef = useRef(user.photoURL);
@@ -40,7 +40,14 @@ const Profile = () => {
     <div className='hero min-h-screen bg-base-200'>
       <div className='hero-content flex-col lg:flex-row-reverse'>
         <div className='text-center lg:text-left ml-6'>
-          <h1 className='text-3xl font-bold'>Update your profile now!</h1>
+          <h1 className='text-3xl font-bold'>This page under developing</h1>
+          <Typewriter
+            options={{
+              strings: ['update will soon', '. . . . . . .'],
+              autoStart: true,
+              loop: true,
+            }}
+          />
           <p className='py-6'>
             If you want to update information of your profile
           </p>
@@ -102,7 +109,7 @@ const Profile = () => {
                 <input
                   type='submit'
                   value='Submit'
-                  className='btn btn-primary'
+                  className='btn btn-accent'
                 />
               </div>
             </div>

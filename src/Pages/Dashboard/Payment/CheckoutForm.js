@@ -130,7 +130,7 @@ const CheckoutForm = ({ booking }) => {
             Your transactionId:{' '}
             <span className='font-bold'>{transactionId}</span>
           </p>
-          <Link to='/' className='btn btn-secondary mt-12'>Back to Home</Link>
+          <Link to='/' className='btn bg-gradient-to-r from-accent to-secondary  text-white capitalize mt-12'>Back to Home</Link>
         </div>
         
       )}

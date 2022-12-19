@@ -135,7 +135,7 @@ const AddDoctor = () => {
         </div>
 
         <input
-          className='btn btn-accent w-full mt-4'
+          className='btn bg-gradient-to-r from-accent to-secondary text-xl text-white capitalize w-full mt-4'
           value='Add Doctor'
           type='submit'
         />

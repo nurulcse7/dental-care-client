@@ -1,4 +1,5 @@
 import React from 'react';
+import DisplayServices from '../../Appointment/DisplayServices/DisplayServices';
 import Contact from '../../Contact/Contact';
 import DentalCare from '../../DentalCare/DentalCare';
 import Banner from '../Banner/Banner';
@@ -6,7 +7,6 @@ import Carousel from '../Carousel/Carousel';
 import InfoCards from '../InfoCards/InfoCards';
 import MakeAppointment from '../MakeAppointment/MakeAppointment';
 import OurExperts from '../OurExperts/OurExperts';
-import Services from '../Services/Services';
 import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
@@ -17,12 +17,12 @@ const Home = () => {
       </marquee>
       <Carousel></Carousel>
       <InfoCards></InfoCards>
-      <Services></Services>
+      <DisplayServices></DisplayServices>
       <Banner></Banner>
       <OurExperts></OurExperts>
-      <MakeAppointment></MakeAppointment>
       <DentalCare></DentalCare>
       <Testimonial></Testimonial>
+      <MakeAppointment></MakeAppointment>
       <Contact></Contact>
     </div>
   );

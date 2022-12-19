@@ -215,7 +215,7 @@ const SignUp = () => {
           </label>
 
           <input
-            className='btn btn-accent w-full mt-4'
+            className='btn bg-gradient-to-r from-accent to-secondary text-xl text-white capitalize w-full mt-4'
             value='Sign Up'
             type='submit'
             disabled={!agree}

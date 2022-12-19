@@ -1,5 +1,8 @@
+
 [
   {
+    "img": "https://i.ibb.co/RNgNR9z/services-1.jpg",
+    "price": "50",
     "name": "General Dentistry",
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -21,6 +24,8 @@
     ]
   },
   {
+    "img": "https://i.ibb.co/svy4BWt/services-2.jpg",
+    "price": "60",
     "name": "Cosmetic Dentistry",
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -42,6 +47,8 @@
     ]
   },
   {
+    "img": "https://i.ibb.co/XtZ3BD7/services-3.jpg",
+    "price": "70",
     "name": "Dental Implants",
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -63,6 +70,8 @@
     ]
   },
   {
+    "img": "https://i.ibb.co/W2Tn5Df/services-4.jpg",
+    "price": "90",
     "name": "Orthodontics",
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -84,6 +93,8 @@
     ]
   },
   {
+    "img": "https://i.ibb.co/J2ZYkft/services-5.jpg",
+    "price": "80",
     "name": "Teeth Whitening",
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -105,6 +116,8 @@
     ]
   },
   {
+    "img": "https://i.ibb.co/3r79Q5b/services-6.jpg",
+    "price": "99",
     "name": "Teeth Cleaning",
     "slots": [
       "08.00 AM - 08.30 AM",
