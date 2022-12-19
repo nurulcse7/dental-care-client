@@ -50,11 +50,12 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - React-Context (AuthProvider)
 - React Hook Form (npm install react-hook-form)
 - React-Toastify (npm i react-toastify)
-- React Icons (npm install react-icons --save)
-- React Day Picker (npm install react-day-picker date-fns)
+- React Icons [npm](npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
+
+- React Day Picker [npm](npm install react-day-picker date-fns)
 - TypewriterJS (npm i typewriter-effect)
 - StripeJS (npm install --save @stripe/react-stripe-js @stripe/stripe-js)
-<!-- - Axios (Fetch data from backend) (npm i axios) -->
+- EmailJS (npm install @emailjs/browser --save) 
 
 #### Back-end Technology
 

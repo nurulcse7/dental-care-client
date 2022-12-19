@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PrimaryButton from '../../../components/PrimaryButton/PrimaryButton';
 import './CarouselItem.css';
 
 const CarouselItem = ({ slide }) => {
@@ -23,7 +24,7 @@ const CarouselItem = ({ slide }) => {
 
       <div className='absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 top-3/4'>
         <Link to='/appointment'>
-          <button className='btn btn-primary btn-lg font-bold'>Book Now</button>
+          <PrimaryButton>Book Now</PrimaryButton>
         </Link>
       </div>
       <div className='absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0'>

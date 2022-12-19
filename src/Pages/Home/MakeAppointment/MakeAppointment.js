@@ -1,17 +1,14 @@
 import React from 'react';
 import makeAppointment from '../../../assets/images/makeAppointment.jpg';
-import appointment from '../../../assets/images/appointment.png';
 import PrimaryButton from '../../../components/PrimaryButton/PrimaryButton';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const MakeAppointment = () => {
+  useTitle('Appointment');
+  
   return (
-    <section
-      className='mt-32 shadow-2xl'
-      style={{
-        background: `url(${appointment})`,
-      }}
-    >
+    <section className='mt-32 shadow-2xl'>
       <div className='hero'>
         <div className='hero-content flex-col lg:flex-row'>
           <img
@@ -31,8 +28,8 @@ const MakeAppointment = () => {
               publishing packages and web page
             </p>
             <Link to='/appointment'>
-            <PrimaryButton>Getting Started</PrimaryButton>
-          </Link>
+              <PrimaryButton>Getting Started</PrimaryButton>
+            </Link>
           </div>
         </div>
       </div>

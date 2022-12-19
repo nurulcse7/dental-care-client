@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import About from "../../components/About/About";
+import TermsConditions from "../../components/TermsConditions/TermsConditions";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import Appointment from "../../Pages/Appointment/Appointment/Appointment";
+import Contact from "../../Pages/Contact/Contact";
 import AddDoctor from "../../Pages/Dashboard/AddDoctor/AddDoctor";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import ManageDoctors from "../../Pages/Dashboard/ManageDoctors/ManageDoctors";
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+            {
+                path: '/terms',
+                element: <TermsConditions></TermsConditions>
             },
         ]
     },

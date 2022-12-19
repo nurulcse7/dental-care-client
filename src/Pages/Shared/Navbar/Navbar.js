@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import Logo from '../../../assets/images/Logo.png';
+import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -20,7 +22,13 @@ const Navbar = () => {
         <Link to='/appointment'>Appointment</Link>
       </li>
       <li>
+        <Link to='/contact'>Contact</Link>
+      </li>
+      <li>
         <Link to='/about'>About</Link>
+      </li>
+      <li>
+        <Link to='/terms'>Terms of Use</Link>
       </li>
       {user?.uid ? (
         <>
@@ -36,11 +44,25 @@ const Navbar = () => {
           <Link to='/login'>Login</Link>
         </li>
       )}
+      <li>
+      <Link to='/profile'>
+      {user?.photoURL ? (
+        <img
+          src={user?.photoURL}
+          className='rounded-full w-12 mt-2'
+          title={user?.displayName}
+          alt='Pic'
+        />
+      ) : (
+        <FaUser className='mt-5'></FaUser>
+      )}
+    </Link>
+      </li>
     </React.Fragment>
   );
 
   return (
-    <div className='navbar bg-base-100 flex justify-between'>
+    <div className='navbar bg-base-100 flex justify-between sticky top-0 z-50'>
       <div className='navbar-start'>
         <div className='dropdown'>
           <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -66,11 +88,12 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to='/' className='btn btn-ghost normal-case text-xl'>
+        <Link to='/' className='btn btn-ghost normal-case text-2xl'>
+          <img src={Logo} alt='Logo' className='mr-2' />
           Dental Care
         </Link>
       </div>
-      <div className='navbar-center hidden lg:flex'>
+      <div className='navbar-center hidden lg:flex text-lg'>
         <ul className='menu menu-horizontal p-0'>{menuItems}</ul>
       </div>
     </div>
