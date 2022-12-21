@@ -52,14 +52,14 @@ const SignUp = () => {
   // 75
   const saveUser = (name, email) => {
     const user = { name, email };
-    fetch('http://localhost:5000/users', {
+    fetch('https://dental-care-server-rho.vercel.app/users', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
       body: JSON.stringify(user),
     })
-      .then(( res) => res.json())
+      .then((res) => res.json())
       .then((data) => {
         setCreatedUserEmail(email);
       });

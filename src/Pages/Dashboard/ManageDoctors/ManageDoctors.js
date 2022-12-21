@@ -6,25 +6,34 @@ import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 
 const ManageDoctors = () => {
   const [deletingDoctor, setDeletingDoctor] = useState(null);
-  const closeModal = () => { setDeletingDoctor(null); };
+  const closeModal = () => {
+    setDeletingDoctor(null);
+  };
 
-  const { data: doctors, isLoading, refetch, } = useQuery({
+  const {
+    data: doctors,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ['doctors'],
     queryFn: async () => {
       try {
-        const res = await fetch('http://localhost:5000/doctors', {
-          headers: {
-            authorization: `bearer ${localStorage.getItem('accessToken')}`,
-          },
-        });
+        const res = await fetch(
+          'https://dental-care-server-rho.vercel.app/doctors',
+          {
+            headers: {
+              authorization: `bearer ${localStorage.getItem('accessToken')}`,
+            },
+          }
+        );
         const data = await res.json();
         return data;
       } catch (error) {}
     },
   });
-// Delete a Doctor from UI 76-8 
+  // Delete a Doctor from UI 76-8
   const handleDeleteDoctor = (doctor) => {
-    fetch(`http://localhost:5000/doctors/${doctor._id}`, {
+    fetch(`https://dental-care-server-rho.vercel.app/doctors/${doctor._id}`, {
       method: 'DELETE',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`,
@@ -101,4 +110,4 @@ const ManageDoctors = () => {
 };
 
 export default ManageDoctors;
-// 76-6, 7, 8 
+// 76-6, 7, 8

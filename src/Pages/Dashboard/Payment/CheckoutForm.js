@@ -14,8 +14,8 @@ const CheckoutForm = ({ booking }) => {
   const { price, email, patient, _id } = booking;
 
   useEffect(() => {
-    // Create PaymentIntent as soon as the page loads 77-7 
-    fetch('http://localhost:5000/create-payment-intent', {
+    // Create PaymentIntent as soon as the page loads 77-7
+    fetch('https://dental-care-server-rho.vercel.app/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const CheckoutForm = ({ booking }) => {
       .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
 
-// 
+  //
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!stripe || !elements) {
@@ -75,7 +75,7 @@ const CheckoutForm = ({ booking }) => {
         email,
         bookingId: _id,
       };
-      fetch('http://localhost:5000/payments', {
+      fetch('https://dental-care-server-rho.vercel.app/payments', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -130,9 +130,13 @@ const CheckoutForm = ({ booking }) => {
             Your transactionId:{' '}
             <span className='font-bold'>{transactionId}</span>
           </p>
-          <Link to='/' className='btn bg-gradient-to-r from-accent to-secondary  text-white capitalize mt-12'>Back to Home</Link>
+          <Link
+            to='/'
+            className='btn bg-gradient-to-r from-accent to-secondary  text-white capitalize mt-12'
+          >
+            Back to Home
+          </Link>
         </div>
-        
       )}
     </>
   );

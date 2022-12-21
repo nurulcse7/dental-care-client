@@ -31,7 +31,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
     // TODO: send data to the server
     // and once data is saved then close the modal
     // and display success toast
-    fetch('http://localhost:5000/bookings', {
+    fetch('https://dental-care-server-rho.vercel.app/bookings', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -112,7 +112,13 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
                 />
               </>
             ) : (
-              <Link to='/login' className='btn btn-warning w-full capitalize text-xl hover:btn-secondary'> Please Login First</Link>
+              <Link
+                to='/login'
+                className='btn btn-warning w-full capitalize text-xl hover:btn-secondary'
+              >
+                {' '}
+                Please Login First
+              </Link>
             )}
           </form>
         </div>

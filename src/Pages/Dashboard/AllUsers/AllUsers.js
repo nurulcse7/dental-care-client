@@ -6,22 +6,24 @@ const AllUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/users');
+      const res = await fetch(
+        'https://dental-care-server-rho.vercel.app/users'
+      );
       const data = await res.json();
       return data;
     },
   });
 
   const handleMakeAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://dental-care-server-rho.vercel.app/users/admin/${id}`, {
       method: 'PUT',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`,
-      }, //75-8 
+      }, //75-8
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         if (data.modifiedCount > 0) {
           toast.success('Make admin successful.');
           refetch();

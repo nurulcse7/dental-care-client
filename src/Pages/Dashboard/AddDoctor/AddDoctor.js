@@ -11,14 +11,16 @@ const AddDoctor = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-    const imageHostKey = process.env.REACT_APP_imgBB_key; //76-4
-    // console.log(imageHostKey)
+  const imageHostKey = process.env.REACT_APP_imgBB_key; //76-4
+  // console.log(imageHostKey)
   const navigate = useNavigate();
 
   const { data: specialties, isLoading } = useQuery({
     queryKey: ['specialty'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/appointmentSpecialty');
+      const res = await fetch(
+        'https://dental-care-server-rho.vercel.app/appointmentSpecialty'
+      );
       const data = await res.json();
       return data;
     },
@@ -47,7 +49,7 @@ const AddDoctor = () => {
           };
 
           // save doctor information to the database 76-5
-          fetch('http://localhost:5000/doctors', {
+          fetch('https://dental-care-server-rho.vercel.app/doctors', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
@@ -65,9 +67,9 @@ const AddDoctor = () => {
       });
   };
 
-    if (isLoading) {
-      return <Loading></Loading>;
-    }
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div className='w-96 p-7 shadow-2xl rounded-3xl'>
@@ -125,11 +127,11 @@ const AddDoctor = () => {
             <span className='label-text text-lg mt-2 '>Photo</span>
           </label>
           <input
-          type='file'
+            type='file'
             {...register('image', {
               required: 'Photo is Required',
             })}
-            className='input input-bordered w-full max-w-xs p-2' 
+            className='input input-bordered w-full max-w-xs p-2'
           />
           {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
         </div>
