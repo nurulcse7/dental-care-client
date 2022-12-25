@@ -53,11 +53,16 @@ const DisplayServices = () => {
           Enjoy Specialized Care Through Precision, Artistry, and Experience
         </h2>
 
-        <Link to='/appointment'><PrimaryButton>Make Appointment</PrimaryButton></Link>
+        <Link to='/appointment'>
+          <PrimaryButton>Make Appointment</PrimaryButton>
+        </Link>
       </div>
       <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-        {servicesData.map((service) => (
-          <DisplayService key={service.id} service={service}></DisplayService>
+        {servicesData?.map((service) => (
+          <DisplayService 
+          key={service.id} 
+          service={service}
+          ></DisplayService>
         ))}
       </div>
     </div>

@@ -7,6 +7,18 @@
   user-select: none;
 }
 
+/* Protect image download  */
+/* My answer on stackOverflow https://stackoverflow.com/a/74820810*/
+img {
+  pointer-events: none;
+}
+
+/* using pseudo element for when user select any page content (if not set= user-select: none;)*/
+::selection {
+  color: rgb(243, 246, 249);
+  background: rgb(113, 71, 251);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -23,11 +35,6 @@ code {
     monospace;
 }
 
-/* using pseudo element for when user select any page content (if not set= user-select: none;)*/
-::selection {
-  color: rgb(243, 246, 249);
-  background: rgb(113, 71, 251);
-}
 
 /* user can't select text. If used .prevent-select class or user-select: none;*/
 .prevent-select {
@@ -36,8 +43,5 @@ code {
   user-select: none; /* Standard syntax */
 }
 
-/* Protect image download  */
-/* My answer on stackOverflow https://stackoverflow.com/a/74820810*/
-img {
-  pointer-events: none;
-}
+
+
