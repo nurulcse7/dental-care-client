@@ -13,17 +13,18 @@
 `server-side` [Click here](https://github.com/nurulcse7/dental-care-server)
 
 ### Description
-- In this project implement for dental care services who need to specialist Dentist. Here people can take a dental service their flexible time slot with service categories. Also he/she can one more services in a day but not same time. 
-- Customer/user can't take a service without login and login form also validation implemented, such as  full 
-name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&*).
+- This project implements dental care services that need a specialist Dentist. Here people can take a dental service in their flexible time slot with service categories. Also, he/she can do one more service in a day but not at the same time. The user can't take a service without login and login form also validation implemented, such as full name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&*).
+- Admin can manage the whole website, and also he manages users, Doctors like to add or delete.
 - Implement user email verification enable
-
+- Authentication with Firebase and Authorization with JSON WEB TOKEN (JWT)
 - This project frontend start with Create-react-app (ReactJS)
 - Design by Tailwindcss with daisyUI Component 
 - Backend start with NodeJS and ExpressJS
 - Connect server with MongoDB Database
 - Implement CRUD operation
-- Every section completed after code push on GitHub
+- Payment Gateway implement with Stripe 
+- Email sending service with Nodemailer and Mailgun
+- Every section completed after code push on GitHub 
 
 --- 
 
@@ -46,6 +47,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - daisyUI
 - JavaScript
 - ReactJS
+- React Query 
 - React Router - (npm install react-router-dom)
 - React-Context (AuthProvider)
 - React Hook Form (npm install react-hook-form)
@@ -74,7 +76,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - Stripe for payment get way (npm install --save stripe) [Docs1](https://stripe.com/docs/payments/quickstart) [Docs2](https://stripe.com/docs/testing)
 
 - Nodemailer (npm install nodemailer) [Docs](https://nodemailer.com/about/)
-- Mail gun () [Docs](https://app.mailgun.com/mg/dashboard) (https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport)
+- Mailgun () [Docs](https://app.mailgun.com/mg/dashboard) (https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport)
 
 - Deploy in Vercel (server) [Docs](https://vercel.com/dashboard)
 
