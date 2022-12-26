@@ -37,23 +37,23 @@ const MyAppointment = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings &&
-              bookings?.map((booking, i) => (
+            { bookings &&
+              bookings.map((booking, i) => (
                 <tr key={booking?._id}>
                   <th>{i + 1}</th>
-                  <td>{booking?.patient}</td>
-                  <td>{booking?.treatment}</td>
-                  <td>{booking?.appointmentDate}</td>
-                  <td>{booking?.slot}</td>
+                  <td>{booking.patient}</td>
+                  <td>{booking.treatment}</td>
+                  <td>{booking.appointmentDate}</td>
+                  <td>{booking.slot}</td>
                   <td>
-                    {booking?.price && !booking?.paid && (
+                    {booking.price && !booking.paid && (
                       <Link to={`/dashboard/payment/${booking._id}`}>
                         <button className='btn bg-gradient-to-r from-accent to-secondary text-white capitalize btn-sm'>
                           Pay
                         </button>
                       </Link>
                     )}
-                    {booking?.price && booking?.paid && (
+                    {booking.price && booking.paid && (
                       <span className='text-green-500'>Paid</span>
                     )}
                   </td>
