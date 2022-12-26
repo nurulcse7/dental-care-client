@@ -51,8 +51,8 @@ const OurExperts = () => {
         </h2>        
       </div>
       <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-        {servicesData?.map((service) => (
-          <OurExpert key={service.id} service={service}></OurExpert>
+        {servicesData?.map((service, i) => (
+          <OurExpert key={i} service={service}></OurExpert>
         ))}
       </div>
     </div>
