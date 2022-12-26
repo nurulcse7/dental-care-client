@@ -15,6 +15,7 @@
 ### Description
 - This project implements dental care services that need a specialist Dentist. Here people can take a dental service in their flexible time slot with service categories. Also, he/she can do one more service in a day but not at the same time. The user can't take a service without login and login form also validation implemented, such as full name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&*).
 - Admin can manage the whole website, and also he manages users, Doctors like to add or delete.
+- Anyone can contact with admin by using the contact form.
 - Implement user email verification enable
 - Authentication with Firebase and Authorization with JSON WEB TOKEN (JWT)
 - This project frontend start with Create-react-app (ReactJS)
@@ -78,7 +79,9 @@
 - Nodemailer (npm install nodemailer) [Docs](https://nodemailer.com/about/)
 - Mailgun () [Docs](https://app.mailgun.com/mg/dashboard) (https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport)
 
-- Deploy in Vercel (server) [Docs](https://vercel.com/dashboard)
+#### Deploy (Hosting)
+- Deploy frontend in Firebase (Client) [Docs](https://console.firebase.google.com/)
+- Deploy backend in Vercel (server) [Docs](https://vercel.com/dashboard)
 
 
 
