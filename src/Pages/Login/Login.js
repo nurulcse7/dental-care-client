@@ -1,19 +1,11 @@
-import {
-  getAuth,
-  GoogleAuthProvider,
-  // sendPasswordResetEmail,
-} from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-// import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-import app from '../../firebase/firebase.config';
 import useTitle from '../../hooks/useTitle';
 import useToken from '../../hooks/useToken';
-
-const auth = getAuth(app);
 
 const Login = () => {
   useTitle('Login');
@@ -101,7 +93,6 @@ const Login = () => {
               <span className='label-text text-lg'>Email</span>
             </label>
             <input
-              
               type='email'
               name='email'
               {...register('email', {
@@ -131,7 +122,7 @@ const Login = () => {
               placeholder='Your password'
               className='input input-bordered w-full max-w-xs mb-3'
             />
-            
+
             {errors.password && (
               <p className='text-red-600'>{errors.password?.message}</p>
             )}
